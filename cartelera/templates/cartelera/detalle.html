@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block contenido %}
+<h1>{{ pelicula.titulo }}</h1>
+{% if pelicula.afiche %}<img src="{{ pelicula.afiche.url }}" style="height:320px;">{% endif %}
+<p><strong>Género:</strong> {{ pelicula.genero.nombre }}</p>
+<p><strong>Duración:</strong> {{ pelicula.duracion_min }} minutos</p>
+<p><strong>Precio Entrada:</strong> {{ pelicula.precio_chileno }}</p>
+<p>{{ pelicula.sinopsis }}</p>
+<hr>
+<!-- El formulario de compra se agregará en el Commit 3 -->
+{% endblock %}

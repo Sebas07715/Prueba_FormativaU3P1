@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cine Cartelera</title>
+  <style>
+        body { font-family: sans-serif; margin: 20px; line-height: 1.5; }
+        nav a { margin-right: 15px; font-weight: bold; text-decoration: none; }
+        .grid { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px; }
+        .card { border: 1px solid #ccc; padding: 15px; width: 220px; border-radius: 6px; }
+        .card img { max-width: 100%; height: 280px; object-fit: cover; }
+        .errorlist { color: #b91c1c; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="{% url 'cartelera:inicio' %}">Inicio Cartelera</a>
+    <a href="/admin/" target="_blank">Panel Admin</a>
+  </nav>
+  <hr>
+  {% block contenido %}{% endblock %}
+</body>
+</html>
