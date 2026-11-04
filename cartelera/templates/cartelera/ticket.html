@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<div style="border: 2px dashed #333; padding: 25px; max-width: 500px; margin: 20px auto; border-radius: 8px;">
+    <h2>¡Compra Exitosa!</h2>
+    <p><strong>Código de Ticket:</strong> {{ ticket.codigo }}</p>
+    <p><strong>Película:</strong> {{ ticket.pelicula.titulo }}</p>
+    <p><strong>Comprador:</strong> {{ ticket.nombre_comprador }} ({{ ticket.email_comprador }})</p>
+    <p><strong>Cantidad de entradas:</strong> {{ ticket.cantidad }}</p>
+    <p><strong>Total pagado:</strong> {{ total_clp }}</p>
+    <p><small>Fecha y hora: {{ ticket.fecha_compra|date:"d/m/Y H:i" }}</small></p>
+    
+    <a href="{% url 'cartelera:inicio' %}">Volver a la cartelera</a>
+</div>
+{% endblock %}

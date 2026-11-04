@@ -7,5 +7,14 @@
 <p><strong>Precio Entrada:</strong> {{ pelicula.precio_chileno }}</p>
 <p>{{ pelicula.sinopsis }}</p>
 <hr>
-<!-- El formulario de compra se agregará en el Commit 3 -->
+<h2>Comprar Entradas</h2>
+<form method="post" novalidate>
+{% csrf_token %}
+{% for campo in form %}
+<p>{{ campo.label_tag }}<br>{{ campo }}<br>
+<span style="color:#dc2626;">{{ campo.errors }}</span></p>
+{% endfor %}
+<button type="submit">Confirmar Compra</button>
+</form>
+
 {% endblock %}
